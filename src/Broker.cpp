@@ -3,6 +3,4 @@
 void Subscribe(string topic)
 {
     MQTTClient c;
-
-    
 }
