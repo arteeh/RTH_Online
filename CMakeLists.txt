@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.27)
 
 project(
-  PluginName
-  VERSION 0.0.1
+  StarfieldOnlineClient
+  VERSION 1.0.0
   LANGUAGES CXX
 )
 
@@ -21,6 +21,7 @@ set(CPM_SOURCE_CACHE ${CMAKE_CURRENT_BINARY_DIR}/.cpm)
 # Dependencies
 CPMAddPackage("gh:Starfield-Reverse-Engineering/CommonLibSF#main")
 CPMAddPackage("gh:brofield/simpleini@4.20")
+CPMAddPackage("gh:eclipse/paho.mqtt.c@1.3.13")
 
 include(${CommonLibSF_SOURCE_DIR}/CommonLibSF/cmake/CommonLibSF.cmake)
 
@@ -51,7 +52,7 @@ file(
 # Create plugin
 add_commonlibsf_plugin(
   ${PROJECT_NAME}
-  AUTHOR AuthorName
+  AUTHOR arteeh
   SOURCES ${headers} ${sources}
 )
 
